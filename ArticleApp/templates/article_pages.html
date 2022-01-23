@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+{% if article %}
+<ul class="list-group">
+    <table class="table">
+        <thead>
+        <th scope="col" class="lead" align="right">Author: {{ article[0][2] }}</th>
+        <div>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+            <th scope="col" class="lead" align="right"></th>
+        </div>
+        <th scope="col" class="lead" align="left">{{ article [0][4][0:10] }}</th>
+        </thead>
+    </table>
+</ul>
+<h3 class="display-4">{{ article[0][1] }}</h3>
+<hr>
+<div class="lead">{{ article [0][3]|safe }}</div>
+{% else %}
+<div class="display-4">NOT FOUND {{ article_no }}</div>
+<hr>
+<div class="alert alert-danger">
+    <div class="lead">There is no article in this page.</div>
+</div>
+{% endif %}
+{% endblock body %}

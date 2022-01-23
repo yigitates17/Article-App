@@ -1,0 +1,24 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    {% if edit_form %}
+        <h3 class="display-4">{{ title }}</h3>
+        <hr>
+        {% from "includes/formhelpers.html" import render_field %}
+        <div class="container">
+            <form method=post>
+                <dl>
+                    <!--            {{ render_field(edit_form.title, class='form-control') }}-->
+                    {{ render_field(edit_form.content, class='form-control') }}
+                </dl>
+                <button type="submit" class="btn btn-primary mr-auto">Save Changes</button>
+            </form>
+        </div>
+    {% else %}
+        <div class="display-4">NOT FOUND {{ article_no }}</div>
+        <hr>
+        <div class="alert alert-danger">
+            <div class="lead">There is no article to edit in this page.</div>
+        </div>
+    {% endif %}
+{% endblock body %}

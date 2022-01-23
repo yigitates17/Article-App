@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <div class="jumbotron">
+        {% if session.user_name %}
+            <h1 class="display-4">Hello {{ session.user_name }},</h1>
+            <h2 class="display-4">You are on the home page!</h2>
+        {% else %}
+            <h1 class="display-4">Hello, you are on the home page!</h1>
+        {% endif %}
+        <p class="lead">This is a simple home page. You can check navigation tab to learn about the website more.</p>
+        <hr class="my-4">
+        <p>There is nothing important here.</p>
+        <p class="lead">
+            <a class="btn btn-primary btn-lg" href="#" role="button">Nothing</a>
+        </p>
+    </div>
+
+
+{% endblock body %}

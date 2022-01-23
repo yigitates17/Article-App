@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+
+    {% if rows %}
+        <div><h3 class="display-4">Articles</h3> <a type="submit" class="btn btn-primary" href="/addarticle">Add an
+            article</a></div> <br>
+
+        <form action="/articles/search" method="post"><input type="text" name="keyword" class="form-control input-sm"
+                                                             maxlength="64" placeholder="Search article"></form>
+
+        <hr>
+
+        <ul class="list-group">
+            {% for row in rows %}
+                <a href="/articles/{{ row[0] }}">
+                    <li class="list-group-item list-group-item-action">{{ row[1] }}</li>
+                </a>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <h3 class="display-4">Articles</h3>
+        <a type="submit" class="btn btn-primary" href="/addarticle">Add an article</a>
+        <hr>
+        <div class="alert alert-warning">
+            <div class="lead">No articles found.</div>
+        </div>
+    {% endif %}
+
+{% endblock body %}

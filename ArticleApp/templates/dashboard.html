@@ -1,0 +1,42 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+    <h3 class="display-4">Dashboard ( {{ session.user_name }} )</h3>
+
+    {% if rows %}
+        <br>
+        <ul class="list-group">
+            <table class="table table-hover">
+                <thead class="thead-dark">
+                <tr>
+                    <th scope="col" class="lead">No</th>
+                    <th scope="col" class="lead">Title</th>
+                    <th scope="col" class="lead">Author</th>
+                    <th scope="col" class="lead">Content</th>
+                    <th scope="col" class="lead">Created Date</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for row in rows %}
+                    <tr>
+                        <td>{{ row[0] }}</td>
+                        <td><a href="/articles/{{ row[0] }}">{{ row[1] }}</a></td>
+                        <td>@{{ row[2][0:45] }}</td>
+                        <td>{{ row[3][0:15]|safe }}...</td>
+                        <td>{{ row[4][0:10] }}</td>
+                        <td><a href="/edit/{{ row[0] }}" class="btn btn-primary">Edit</a></td>
+                        <td><a href="/delete/{{ row[0] }}" class="btn btn-danger">Delete</a></td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </ul>
+    {% else %}
+        <hr>
+        <div class="lead">You have no articles yet.</div>
+    {% endif %}
+{% endblock body %}
