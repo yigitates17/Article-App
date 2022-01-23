@@ -6,7 +6,7 @@ Visitor must be logged in to create an article. Articles can be viewed without m
 
 ![1](https://user-images.githubusercontent.com/69986916/150701776-001e3245-8a4c-4689-bfe7-cec6715aca6d.JPG)
 
-#![2](https://user-images.githubusercontent.com/69986916/150701796-1e37496c-1a2f-4e7c-ad06-842977372f9c.JPG)
+![2](https://user-images.githubusercontent.com/69986916/150701796-1e37496c-1a2f-4e7c-ad06-842977372f9c.JPG)
 
 ![3](https://user-images.githubusercontent.com/69986916/150701817-a1417b0e-327e-4f39-92ea-5c2e50698c7a.JPG)
 
